@@ -1,12 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    mysql2 (0.4.10-x64-mingw32)
+    pg (1.2.3-x64-mingw32)
     thor (1.0.1)
 
 PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  mysql2 (~> 0.4.10)
+  pg (~> 1.2)
   thor (~> 1.0)
 
 BUNDLED WITH
