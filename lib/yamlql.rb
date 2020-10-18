@@ -3,6 +3,7 @@ require 'fileutils'
 require 'yaml'
 require 'thor'
 
+require_relative 'yamlql/utils'
 require_relative "yamlql/factory"
 
 
@@ -17,10 +18,10 @@ class YamlQL < Thor
     FileUtils.touch 'yamlql/migration.yaml'
     puts 'migration.yaml created successfully'
   end
+  
   desc 'migrate', 'migrate tables to database'
   def migrate
-    file = YAML.load_file('yamlql/migration.yaml')
-    factory file['dialect']
+    factory load_yaml_file('config')['dialect']
   end
 end
 
